@@ -26,15 +26,6 @@ public final class SearchListenerMock: SearchListener {
     public init() { }
 
 
-    public private(set) var searchDidCompleteCallCount = 0
-    public var searchDidCompleteHandler: (() -> ())?
-    public func searchDidComplete() {
-        searchDidCompleteCallCount += 1
-        if let searchDidCompleteHandler = searchDidCompleteHandler {
-            searchDidCompleteHandler()
-        }
-        
-    }
 }
 
 

@@ -19,6 +19,10 @@
 
 /* Begin PBXFileReference section */
 		DD6965952F41D99D0027658A /* Repos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6965C02F42A0000027658A /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		DD6965C12F42A0000027658A /* Feature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Feature; sourceTree = "<group>"; };
+		DD6965C22F42A0000027658A /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
+		DD6965C32F42A0000027658A /* SharedPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedPackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,10 +39,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD6965BC2F41DF630027658A /* Entity in Frameworks */,
-				DD6965BB2F41DF630027658A /* Search in Frameworks */,
+				DD6965BB2F41DF630027658A /* Feature in Frameworks */,
 				DD6965BA2F41DF630027658A /* Domain in Frameworks */,
 				DD6965B92F41DF630027658A /* Platform in Frameworks */,
-				DD6965B82F41DF630027658A /* SearchImpl in Frameworks */,
+				DD6965B82F41DF630027658A /* FeatureImpl in Frameworks */,
 				DD6965B72F41DF630027658A /* DomainImpl in Frameworks */,
 				DD6965B62F41DF630027658A /* PlatformImpl in Frameworks */,
 				DD6965B52F41DF630027658A /* SharedPackage in Frameworks */,
@@ -51,6 +55,10 @@
 		DD69658C2F41D99D0027658A = {
 			isa = PBXGroup;
 			children = (
+				DD6965C02F42A0000027658A /* Domain */,
+				DD6965C12F42A0000027658A /* Feature */,
+				DD6965C22F42A0000027658A /* Platform */,
+				DD6965C32F42A0000027658A /* SharedPackage */,
 				DD6965972F41D99D0027658A /* Repos */,
 				DD6965962F41D99D0027658A /* Products */,
 			);
@@ -87,10 +95,10 @@
 				DD6965B42F41DA000027658A /* SharedPackage */,
 				DD6965B52F41DA000027658A /* PlatformImpl */,
 				DD6965B62F41DA000027658A /* DomainImpl */,
-				DD6965B72F41DA000027658A /* SearchImpl */,
+				DD6965B72F41DA000027658A /* FeatureImpl */,
 				DD6965B82F41DA000027658A /* Platform */,
 				DD6965B92F41DA000027658A /* Domain */,
-				DD6965BA2F41DA000027658A /* Search */,
+				DD6965BA2F41DA000027658A /* Feature */,
 				DD6965BB2F41DA000027658A /* Entity */,
 			);
 			productName = Repos;
@@ -121,12 +129,6 @@
 			);
 			mainGroup = DD69658C2F41D99D0027658A;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				DD6965B02F41DA000027658A /* XCLocalSwiftPackageReference "SharedPackage" */,
-				DD6965B12F41DA000027658A /* XCLocalSwiftPackageReference "Platform" */,
-				DD6965B22F41DA000027658A /* XCLocalSwiftPackageReference "Domain" */,
-				DD6965B32F41DA000027658A /* XCLocalSwiftPackageReference "Feature" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DD6965962F41D99D0027658A /* Products */;
 			projectDirPath = "";
@@ -289,7 +291,7 @@
 				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -321,7 +323,7 @@
 				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -365,25 +367,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		DD6965B02F41DA000027658A /* XCLocalSwiftPackageReference "SharedPackage" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = SharedPackage;
-		};
-		DD6965B12F41DA000027658A /* XCLocalSwiftPackageReference "Platform" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Platform;
-		};
-		DD6965B22F41DA000027658A /* XCLocalSwiftPackageReference "Domain" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Domain;
-		};
-		DD6965B32F41DA000027658A /* XCLocalSwiftPackageReference "Feature" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Feature;
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		DD6965B42F41DA000027658A /* SharedPackage */ = {

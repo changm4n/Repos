@@ -1,36 +1,40 @@
-import UIKit
 import SharedPackage
+import UIKit
+import WebView
 
-final class SearchViewController: UIViewController, SearchRouting {
-    private let viewModel: SearchViewModel
+final class SearchViewController: UIViewController, SearchRouting, WebViewListener {
+  private let viewModel: SearchViewModel
+  private let webViewBuildable: WebViewBuildable
 
-    init(viewModel: SearchViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
+  init(viewModel: SearchViewModel, webViewBuildable: WebViewBuildable) {
+    self.viewModel = viewModel
+    self.webViewBuildable = webViewBuildable
+    super.init(nibName: nil, bundle: nil)
+  }
 
-    required init?(coder: NSCoder) { fatalError() }
+  required init?(coder: NSCoder) { fatalError() }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        SearchView(viewModel: viewModel).attach(to: self)
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    SearchView(viewModel: viewModel).attach(to: self)
+  }
 
-    // MARK: - Routing
+  // MARK: - Routing
 
-    func attachChild(viewController: UIViewController) {
-        show(viewController, sender: nil)
-    }
+  func attachWebView(url: URL) {
+    let webViewVC = webViewBuildable.build(url: url, listener: self)
+    present(webViewVC, animated: true)
+  }
 
-    func detachChild() {
-        navigationController?.popViewController(animated: true)
-    }
+  // MARK: - Private
 
-    func attachSheet(viewController: UIViewController) {
-        present(viewController, animated: true)
-    }
+  private func detachSheet() {
+    dismiss(animated: true)
+  }
 
-    func detachSheet() {
-        dismiss(animated: true)
-    }
+  // MARK: - WebViewListener
+
+  func webViewDidClose() {
+    detachSheet()
+  }
 }
