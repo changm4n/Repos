@@ -6,6 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DD6965B52F41DF630027658A /* SharedPackage in Frameworks */ = {isa = PBXBuildFile; productRef = DD6965B42F41DA000027658A /* SharedPackage */; };
+		DD6965B62F41DF630027658A /* PlatformImpl in Frameworks */ = {isa = PBXBuildFile; productRef = DD6965B52F41DA000027658A /* PlatformImpl */; };
+		DD6965B72F41DF630027658A /* DomainImpl in Frameworks */ = {isa = PBXBuildFile; productRef = DD6965B62F41DA000027658A /* DomainImpl */; };
+		DD6965B82F41DF630027658A /* FeatureImpl in Frameworks */ = {isa = PBXBuildFile; productRef = DD6965B72F41DA000027658A /* FeatureImpl */; };
+		DD6965B92F41DF630027658A /* Platform in Frameworks */ = {isa = PBXBuildFile; productRef = DD6965B82F41DA000027658A /* Platform */; };
+		DD6965BA2F41DF630027658A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = DD6965B92F41DA000027658A /* Domain */; };
+		DD6965BB2F41DF630027658A /* Feature in Frameworks */ = {isa = PBXBuildFile; productRef = DD6965BA2F41DA000027658A /* Feature */; };
+		DD6965BC2F41DF630027658A /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = DD6965BB2F41DA000027658A /* Entity */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DD6965952F41D99D0027658A /* Repos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +34,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6965BC2F41DF630027658A /* Entity in Frameworks */,
+				DD6965BB2F41DF630027658A /* Search in Frameworks */,
+				DD6965BA2F41DF630027658A /* Domain in Frameworks */,
+				DD6965B92F41DF630027658A /* Platform in Frameworks */,
+				DD6965B82F41DF630027658A /* SearchImpl in Frameworks */,
+				DD6965B72F41DF630027658A /* DomainImpl in Frameworks */,
+				DD6965B62F41DF630027658A /* PlatformImpl in Frameworks */,
+				DD6965B52F41DF630027658A /* SharedPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +84,14 @@
 			);
 			name = Repos;
 			packageProductDependencies = (
+				DD6965B42F41DA000027658A /* SharedPackage */,
+				DD6965B52F41DA000027658A /* PlatformImpl */,
+				DD6965B62F41DA000027658A /* DomainImpl */,
+				DD6965B72F41DA000027658A /* SearchImpl */,
+				DD6965B82F41DA000027658A /* Platform */,
+				DD6965B92F41DA000027658A /* Domain */,
+				DD6965BA2F41DA000027658A /* Search */,
+				DD6965BB2F41DA000027658A /* Entity */,
 			);
 			productName = Repos;
 			productReference = DD6965952F41D99D0027658A /* Repos.app */;
@@ -94,6 +121,12 @@
 			);
 			mainGroup = DD69658C2F41D99D0027658A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DD6965B02F41DA000027658A /* XCLocalSwiftPackageReference "SharedPackage" */,
+				DD6965B12F41DA000027658A /* XCLocalSwiftPackageReference "Platform" */,
+				DD6965B22F41DA000027658A /* XCLocalSwiftPackageReference "Domain" */,
+				DD6965B32F41DA000027658A /* XCLocalSwiftPackageReference "Feature" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DD6965962F41D99D0027658A /* Products */;
 			projectDirPath = "";
@@ -332,6 +365,60 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		DD6965B02F41DA000027658A /* XCLocalSwiftPackageReference "SharedPackage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = SharedPackage;
+		};
+		DD6965B12F41DA000027658A /* XCLocalSwiftPackageReference "Platform" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Platform;
+		};
+		DD6965B22F41DA000027658A /* XCLocalSwiftPackageReference "Domain" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Domain;
+		};
+		DD6965B32F41DA000027658A /* XCLocalSwiftPackageReference "Feature" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Feature;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD6965B42F41DA000027658A /* SharedPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedPackage;
+		};
+		DD6965B52F41DA000027658A /* PlatformImpl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlatformImpl;
+		};
+		DD6965B62F41DA000027658A /* DomainImpl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DomainImpl;
+		};
+		DD6965B72F41DA000027658A /* FeatureImpl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeatureImpl;
+		};
+		DD6965B82F41DA000027658A /* Platform */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Platform;
+		};
+		DD6965B92F41DA000027658A /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		DD6965BA2F41DA000027658A /* Feature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Feature;
+		};
+		DD6965BB2F41DA000027658A /* Entity */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Entity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD69658D2F41D99D0027658A /* Project object */;
 }
