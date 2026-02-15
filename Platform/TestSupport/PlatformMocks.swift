@@ -5,7 +5,6 @@
 
 
 import Foundation
-import Platform
 
 
 public final class NetworkClientMock: NetworkClient, @unchecked Sendable {
@@ -117,15 +116,33 @@ public final class SearchRepositoryMock: SearchRepository, @unchecked Sendable {
     public init() { }
 
 
-    private let searchState = MockoloMutex(MockoloHandlerState<Never, @Sendable (String, Int) async throws -> (totalCount: Int, items: [(id: Int, name: String, htmlURL: String, ownerLogin: String, ownerAvatarURL: String)])>())
+    private let searchState = MockoloMutex(MockoloHandlerState<Never, @Sendable (String, Int) async throws -> (totalCount: Int, items: [(
+    id: Int,
+    name: String,
+    htmlURL: String,
+    ownerLogin: String,
+    ownerAvatarURL: String
+  )])>())
     public var searchCallCount: Int {
         return searchState.withLock(\.callCount)
     }
-    public var searchHandler: (@Sendable (String, Int) async throws -> (totalCount: Int, items: [(id: Int, name: String, htmlURL: String, ownerLogin: String, ownerAvatarURL: String)]))? {
+    public var searchHandler: (@Sendable (String, Int) async throws -> (totalCount: Int, items: [(
+    id: Int,
+    name: String,
+    htmlURL: String,
+    ownerLogin: String,
+    ownerAvatarURL: String
+  )]))? {
         get { searchState.withLock(\.handler) }
         set { searchState.withLock { $0.handler = newValue } }
     }
-    public func search(query: String, page: Int) async throws -> (totalCount: Int, items: [(id: Int, name: String, htmlURL: String, ownerLogin: String, ownerAvatarURL: String)]) {
+    public func search(query: String, page: Int) async throws -> (totalCount: Int, items: [(
+    id: Int,
+    name: String,
+    htmlURL: String,
+    ownerLogin: String,
+    ownerAvatarURL: String
+  )]) {
         let searchHandler = searchState.withLock { state in
             state.callCount += 1
             return state.handler
@@ -133,7 +150,13 @@ public final class SearchRepositoryMock: SearchRepository, @unchecked Sendable {
         if let searchHandler = searchHandler {
             return try await searchHandler(query, page)
         }
-        return (0, [(id: Int, name: String, htmlURL: String, ownerLogin: String, ownerAvatarURL: String)]())
+        return (0, [(
+    id: Int, 
+    name: String, 
+    htmlURL: String, 
+    ownerLogin: String, 
+    ownerAvatarURL: String
+  )]())
     }
 }
 

@@ -1,20 +1,20 @@
 import Foundation
 
 public enum HTTPMethod: String, Sendable {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
-    case delete = "DELETE"
+  case get = "GET"
+  case post = "POST"
+  case put = "PUT"
+  case delete = "DELETE"
 }
 
 public protocol MEndpoint: Sendable {
-    var path: String { get }
-    var method: HTTPMethod { get }
-    var body: (any Encodable & Sendable)? { get }
-    var queryItems: [URLQueryItem]? { get }
+  var path: String { get }
+  var method: HTTPMethod { get }
+  var body: (any Encodable & Sendable)? { get }
+  var queryItems: [URLQueryItem]? { get }
 }
 
-public extension MEndpoint {
-    var body: (any Encodable & Sendable)? { nil }
-    var queryItems: [URLQueryItem]? { nil }
+extension MEndpoint {
+  public var body: (any Encodable & Sendable)? { nil }
+  public var queryItems: [URLQueryItem]? { nil }
 }
