@@ -52,5 +52,25 @@ let package = Package(
       dependencies: ["WebView"],
       path: "WebView/TestSupport"
     ),
+    .testTarget(
+      name: "SearchImplTests",
+      dependencies: [
+        "SearchImpl",
+        "Search",
+        "SearchTestSupport",
+        .product(name: "DomainTestSupport", package: "Domain"),
+        .product(name: "Domain", package: "Domain"),
+      ],
+      path: "Search/Tests"
+    ),
+    .testTarget(
+      name: "WebViewImplTests",
+      dependencies: [
+        "WebViewImpl",
+        "WebView",
+        "WebViewTestSupport",
+      ],
+      path: "WebView/Tests"
+    ),
   ]
 )
