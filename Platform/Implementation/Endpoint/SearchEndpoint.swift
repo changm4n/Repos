@@ -5,7 +5,7 @@ public enum SearchEndpoint: Sendable {
   case searchRepositories(query: String, page: Int)
 }
 
-extension SearchEndpoint: MEndpoint {
+extension SearchEndpoint: Endpoint {
   public var path: String {
     switch self {
     case .searchRepositories:

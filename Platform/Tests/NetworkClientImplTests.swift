@@ -40,7 +40,7 @@ private final class RequestCapture: @unchecked Sendable {
   var capturedBodyData: Data?
 }
 
-private struct StubEndpoint: MEndpoint {
+private struct StubEndpoint: Endpoint {
   var path = "/test"
   var method: HTTPMethod = .get
   var body: (any Encodable & Sendable)? = nil

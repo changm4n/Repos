@@ -10,7 +10,7 @@ public final class NetworkClientImpl: NetworkClient, @unchecked Sendable {
     self.host = host
   }
 
-  public func request<T: Decodable & Sendable>(_ endpoint: MEndpoint, type: T.Type) async throws -> T {
+  public func request<T: Decodable & Sendable>(_ endpoint: Endpoint, type: T.Type) async throws -> T {
     var components = URLComponents(string: host + endpoint.path)!
     components.queryItems = endpoint.queryItems
 
