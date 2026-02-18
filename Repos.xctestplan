@@ -1,0 +1,50 @@
+{
+  "configurations" : [
+    {
+      "id" : "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverageEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Repos.xcodeproj",
+      "identifier" : "DD6965942F41D99D0027658A",
+      "name" : "Repos"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Platform",
+        "identifier" : "PlatformTests",
+        "name" : "PlatformTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Domain",
+        "identifier" : "UsecaseImplTests",
+        "name" : "UsecaseImplTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Feature",
+        "identifier" : "SearchImplTests",
+        "name" : "SearchImplTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Feature",
+        "identifier" : "WebViewImplTests",
+        "name" : "WebViewImplTests"
+      }
+    }
+  ],
+  "version" : 1
+}
