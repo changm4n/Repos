@@ -7,14 +7,14 @@ public enum HTTPMethod: String, Sendable {
   case delete = "DELETE"
 }
 
-public protocol MEndpoint: Sendable {
+public protocol Endpoint: Sendable {
   var path: String { get }
   var method: HTTPMethod { get }
   var body: (any Encodable & Sendable)? { get }
   var queryItems: [URLQueryItem]? { get }
 }
 
-extension MEndpoint {
+extension Endpoint {
   public var body: (any Encodable & Sendable)? { nil }
   public var queryItems: [URLQueryItem]? { nil }
 }

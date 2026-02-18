@@ -5,21 +5,21 @@
 
 
 import Foundation
-
+import Platform
 
 public final class NetworkClientMock: NetworkClient, @unchecked Sendable {
     public init() { }
 
 
-    private let requestState = MockoloMutex(MockoloHandlerState<Never, @Sendable (MEndpoint, Any) async throws -> Any>())
+    private let requestState = MockoloMutex(MockoloHandlerState<Never, @Sendable (Endpoint, Any) async throws -> Any>())
     public var requestCallCount: Int {
         return requestState.withLock(\.callCount)
     }
-    public var requestHandler: (@Sendable (MEndpoint, Any) async throws -> Any)? {
+    public var requestHandler: (@Sendable (Endpoint, Any) async throws -> Any)? {
         get { requestState.withLock(\.handler) }
         set { requestState.withLock { $0.handler = newValue } }
     }
-    public func request<T: Decodable & Sendable>(_ endpoint: MEndpoint, type: T.Type) async throws -> T {
+    public func request<T: Decodable & Sendable>(_ endpoint: Endpoint, type: T.Type) async throws -> T {
         let requestHandler = requestState.withLock { state in
             state.callCount += 1
             return state.handler

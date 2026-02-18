@@ -6,7 +6,7 @@
 
 import Entity
 import Foundation
-
+import Usecase
 
 public final class RecentSearchesUseCaseMock: RecentSearchesUseCase, @unchecked Sendable {
     public init() { }
