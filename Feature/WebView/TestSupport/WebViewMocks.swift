@@ -5,6 +5,7 @@
 
 
 import UIKit
+import WebView
 
 
 public final class WebViewBuildableMock: WebViewBuildable {
